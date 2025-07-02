@@ -4,3 +4,4 @@ pdf2image
 python-multipart
 pillow
 python-dotenv
+moviepy
