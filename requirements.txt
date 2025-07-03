@@ -7,7 +7,7 @@ moviepy==1.0.3
 imageio-ffmpeg==0.4.8
 python-dotenv==1.1.1
 opencv-python==4.9.0.80
-openai==1.33.0
+openai==0.27.0
 openai-whisper @ git+https://github.com/openai/whisper.git@c0d2f624c09dc18e709e37c2ad90c039a4eb72a2
 numpy==1.26.4
 mediapipe==0.10.9
