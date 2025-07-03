@@ -8,3 +8,4 @@ moviepy
 imageio-ffmpeg==0.4.8
 setuptools>=65.0.0
 openai-whisper @ git+https://github.com/openai/whisper.git
+openai
