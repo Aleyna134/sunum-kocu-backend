@@ -6,7 +6,7 @@ import os
 import uuid
 import subprocess
 from pdf2image import convert_from_path
-import moviepy.editor as mpy
+from moviepy.video.io.VideoFileClip import VideoFileClip
 
 import whisper
 from openai import OpenAI
@@ -106,7 +106,7 @@ async def upload_video(video: UploadFile = File(...)):
 
         # Sesi çıkar
         audio_path = os.path.join(UPLOAD_DIR, f"{uid}.wav")
-        clip = mpy.VideoFileClip(fixed_video_path)
+        clip = VideoFileClip(fixed_video_path)
         clip.audio.write_audiofile(audio_path)
         clip.close()
 
