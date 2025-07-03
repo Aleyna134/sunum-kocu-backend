@@ -9,7 +9,7 @@ from pdf2image import convert_from_path
 from moviepy.video.io.VideoFileClip import VideoFileClip
 
 import whisper
-from openai import OpenAI
+import openai
 import traceback
 from dotenv import load_dotenv
 import re
@@ -22,8 +22,7 @@ from posture_analysis import analyze_posture
 
 # Ortam değişkenlerini yükle
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
+openai.api_key = os.getenv("OPENAI_API_KEY")
 app = FastAPI()
 
 # CORS ayarları
@@ -155,7 +154,7 @@ Analiz formatı:
 - Geliştirilmesi gereken yönler
 - Önerilen geliştirmeler
 """
-        response = client.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
         )
