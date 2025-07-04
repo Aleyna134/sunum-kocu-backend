@@ -180,3 +180,7 @@ Analiz formatı:
 
 # Statik dosyaları yayınla
 app.mount(f"/{CONVERTED_DIR}", StaticFiles(directory=CONVERTED_DIR), name="converted")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
