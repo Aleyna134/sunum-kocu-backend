@@ -84,7 +84,7 @@ async def upload_presentation(file: UploadFile = File(...)):
         for i, image in enumerate(images):
             img_path = os.path.join(save_folder, f"slide_{i + 1}.png")
             image.save(img_path, "PNG")
-            image_urls.append(f"http://localhost:8000/{CONVERTED_DIR}/{uid}/slide_{i + 1}.png")
+            image_urls.append(f"https://sunum-kocu-backend.onrender.com/{CONVERTED_DIR}/{uid}/slide_{i + 1}.png")
 
         return {"image_urls": image_urls}
     except Exception as e:
